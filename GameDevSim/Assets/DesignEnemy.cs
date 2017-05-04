@@ -15,7 +15,8 @@ public class DesignEnemy : Enemy {
     {
         if (coll.gameObject.tag == "PlayerBullet")
         {
-            controller.DesignValue.currValue += 5;
+            controller.DesignValue.currValue -= 5;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().ShotsHit++;
             Destroy(gameObject);
             Destroy(coll.gameObject);
         }

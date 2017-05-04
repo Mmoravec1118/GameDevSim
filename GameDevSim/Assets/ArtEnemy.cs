@@ -15,7 +15,8 @@ public class ArtEnemy : Enemy {
     {
         if (coll.gameObject.tag == "PlayerBullet")
         {
-            controller.ArtValue.currValue += 5;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().ShotsHit++;
+            controller.ArtValue.currValue -= 5;
             Destroy(gameObject);
             Destroy(coll.gameObject);
         }

@@ -15,7 +15,8 @@ public class ProgrammingEnemy : Enemy {
     {
         if (coll.gameObject.tag == "PlayerBullet")
         {
-            controller.ProgramValue.currValue += 5;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().ShotsHit++;
+            controller.ProgramValue.currValue -= 5;
             Destroy(gameObject);
             Destroy(coll.gameObject);
         }
